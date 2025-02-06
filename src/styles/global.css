@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card-shadow {
+  filter: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
+  transition: all;
+  transition-duration: 0.5s;
+  animation: ease-in-out;
+}
+.card-shadow:hover {
+  filter: drop-shadow(5px 5px 0 rgb(0 0 0 / 1));
+}
+
+:root {
+  /* ---- ⚫️ Colors ⚪️ ---- */
+  /* Base Tokens */
+  --sys-color-white: #ffffff;
+  --sys-color-black: #000000;
+  --sys-color-gray: #c4c4c4;
+
+  /* Theme Tokens */
+  --primary: var(--sys-color-white);
+  --secondary: var(--sys-color-black);
+  --gray: var(--sys-color-gray);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 22px;
+  background-color: var(--primary);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary);
+  width: 5px;
+  border-left: 3px solid var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  box-sizing: content-box;
+  background-color: var(--gray);
+  border: 3px solid var(--secondary);
+  border-right: none;
+}
+
+.window-pane::-webkit-scrollbar {
+  width: 22px;
+  background-color: var(--primary);
+}
+.window-pane::-webkit-scrollbar-track {
+  background: linear-gradient(
+      45deg,
+      var(--secondary) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--secondary) 75%,
+      var(--secondary)
+    ),
+    linear-gradient(
+      45deg,
+      var(--secondary) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--secondary) 75%,
+      var(--secondary)
+    );
+  background-color: var(--primary);
+  background-size: 4px 4px;
+  background-position:
+    0 0,
+    2px 2px;
+  width: 10px;
+  border-left: 4px solid var(--secondary);
+}
+.window-pane::-webkit-scrollbar-thumb {
+  width: 20px;
+  box-sizing: content-box;
+  background-color: var(--primary);
+  border: 2px solid var(--secondary);
+  border-right: none;
+}
+
+::selection {
+  background-color: aliceblue;
+}

@@ -1,0 +1,33 @@
+---
+import Card from './Card.astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  imgSrc: ImageMetadata;
+  imgAlt: string;
+  description: string;
+}
+
+const { title, imgAlt, imgSrc, description } = Astro.props;
+---
+
+<Card color='white'>
+  <div class="h-8 border-black border-b-[3px] -m-[0.8em] m-b-2 bg-[#c4c4c4]">
+
+    <div class="circle absolute top-[7px] left-[12px] bg-white border-[3.5px] border-black rounded-full w-[15px] h-[15px]"></div>
+    <div class="circle absolute top-[7px] left-[32px] bg-white border-[3.5px] border-black rounded-full w-[15px] h-[15px]"></div>
+
+  </div>
+  <div class='border-3 border-black my-4 h-56 w-full'> 
+    <Image
+      src={imgSrc}
+      alt={imgAlt}
+      height={400}
+      class=' h-full w-full object-cover'
+    />
+  </div>
+  <h3 class='poppins text-lg md:text-xl'>{title}</h3>
+  <p class='poppins'>{description}</p>
+  <slot />
+</Card>

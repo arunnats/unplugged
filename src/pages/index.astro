@@ -1,0 +1,65 @@
+---
+import Layout from '@layouts/Default.astro';
+import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
+import MobileSocials from '@components/home/MobileSocials.astro';
+import Pill from '@components/generic/Pill.astro';
+import Button from '@components/generic/Button.astro';
+import Card from '@components/generic/Card.astro';
+
+const builtWith = [
+  { name: 'Astro', url: 'https://astro.build/' },
+  { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
+  {
+    name: 'Content Collections',
+    url: 'https://docs.astro.build/en/guides/content-collections/',
+  },
+  { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
+  {
+    name: 'Sitemap',
+    url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
+  },
+  { name: 'Vercel', url: 'https://vercel.com' },
+  { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+];
+---
+
+<Layout
+  title='Home'
+  pageTitle='Brutal Theme | Home'
+  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
+>
+  <main class='bg-white p-6'>
+    <MobileSocials />
+    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
+      <h2 class='hidden'>About Brutal</h2>
+      <div class='col-span-5'>
+        <Card>
+          <div class="h-[50vh]"><div class="h-8 border-black border-b-[3px] -m-[0.8em] m-b-2 bg-[#c4c4c4]">
+
+            <div class="circle absolute top-[7px] left-[12px] bg-white border-[3.5px] border-black rounded-full w-[15px] h-[15px]"></div>
+            <div class="circle absolute top-[7px] left-[32px] bg-white border-[3.5px] border-black rounded-full w-[15px] h-[15px]"></div>
+        
+          </div>
+          <div class='flex flex-col justify-between items-start gap-4'>
+            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
+              Brutal theme for <a
+                class='text-white'
+                target='_blank'
+                href='https://astro.build/'>Astro</a
+              >
+            </p>
+            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
+              A minimalistic, neobrutalism theme for Astro.
+            </p>
+            <Button target={'_self'} href='/blog/'>
+              Check out the blog &rarr;
+            </Button>
+          </div></div>
+          
+        </Card>
+      </div>
+    
+    </section>
+    <RecentBlogPosts />
+  </main>
+</Layout>
